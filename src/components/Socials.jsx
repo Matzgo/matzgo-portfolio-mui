@@ -31,7 +31,7 @@ export default function Socials() {
 
           "&:hover svg": {
             // Change color of the icon on hover
-            color: "brightText.primary", // Set your desired hover color here
+            color: "bright.main", // Set your desired hover color here
 
             transform: "scale(1.05)", // Slightly scale the image on hover
           },
@@ -75,7 +75,7 @@ export default function Socials() {
           },
           "&:hover svg": {
             // Change color of the icon on hover
-            color: "brightText.primary", // Set your desired hover color here
+            color: "bright.main", // Set your desired hover color here
             transform: "scale(1.05)", // Slightly scale the image on hover
           },
         }}

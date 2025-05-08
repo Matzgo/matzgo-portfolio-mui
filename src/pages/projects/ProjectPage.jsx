@@ -36,7 +36,7 @@ export default function ProjectPage({ projectData }) {
           sx={{
             my: 2,
             mx: { xs: 2, sm: 4 },
-            textAlign: "left",
+            textAlign: "center",
             fontWeight: "bold",
           }}
         >
@@ -67,7 +67,7 @@ export default function ProjectPage({ projectData }) {
             mt: 0,
           }}
         >
-          Technologies used:
+          Skills Applied:
         </Typography>
 
         {/* Icons Section */}
@@ -106,7 +106,7 @@ export default function ProjectPage({ projectData }) {
               position: "relative",
               width: "100%",
               paddingTop: "56.25%", // 16:9 aspect ratio (9 / 16 = 0.5625)
-              my: 4,
+              mt: 4,
             }}
           >
             <iframe
@@ -125,15 +125,31 @@ export default function ProjectPage({ projectData }) {
             ></iframe>
           </Box>
         )}
-
+        {links && Object.values(links).some(Boolean) && (
+          <Typography
+            variant="h5"
+            component="h1"
+            sx={{
+              mx: { xs: 2, sm: 4 },
+              textAlign: "center",
+              fontWeight: "bold",
+              mt: 6,
+              mb: 0,
+            }}
+          >
+            Links:
+          </Typography>
+        )}
         {/* Project Links Section */}
-        <ProjectLinks
-          githubLink={links.githubLink}
-          steamLink={links.steamLink}
-          itchIoLink={links.itchIoLink}
-          customLink={links.customLink}
-          customImage={links.customImage}
-        />
+        {links && Object.values(links).some(Boolean) && (
+          <ProjectLinks
+            githubLink={links.githubLink}
+            steamLink={links.steamLink}
+            itchIoLink={links.itchIoLink}
+            customLink={links.customLink}
+            customImage={links.customImage}
+          />
+        )}
       </Box>
     </Container>
   );

@@ -16,11 +16,11 @@ export default function Footer() {
         component={RouterLink}
         to="/"
         sx={{
-          color: "brightText.primary",
+          color: "text.primary",
           textDecoration: "none",
           fontWeight: "bold",
           "&:hover": {
-            color: "brightText.secondary",
+            color: "text.dark",
           },
           "&:active": {
             color: "gray",
@@ -33,12 +33,12 @@ export default function Footer() {
         component={RouterLink}
         to="/contact"
         sx={{
-          color: "brightText.primary",
+          color: "text.primary",
           textDecoration: "none",
           fontWeight: "bold",
 
           "&:hover": {
-            color: "brightText.secondary",
+            color: "text.dark",
           },
           "&:active": {
             color: "gray",
@@ -51,11 +51,11 @@ export default function Footer() {
         component={RouterLink}
         to="/impressum"
         sx={{
-          color: "brightText.primary",
+          color: "text.primary",
           textDecoration: "none",
           fontWeight: "bold",
           "&:hover": {
-            color: "brightText.secondary",
+            color: "text.dark",
           },
           "&:active": {
             color: "gray",

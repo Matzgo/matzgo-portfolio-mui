@@ -83,6 +83,7 @@ export const projectsData = {
     videoLink: "https://www.youtube.com/embed/rRSH8lgRgcM",
     links: {
       itchIoLink: "https://peasant-games.itch.io/code-vanguard",
+      githubLink: "https://github.com/Matzgo/CodeVanguard",
     },
     technologiesUsed: ["CSharp", "UnityEngine", "Blender", "VisualStudio", "Git"],
   },
@@ -94,13 +95,13 @@ export const projectsData = {
     bannerImage: "/projects/ReactWebsites/reactWebsites.png",
     previewImage: "/projects/ReactWebsites/reactWebsites.png",
     title: "React Websites - Portfolio and Business",
-    shortDescription: `CodeVanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,
-    description: `CodeVanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,
+    shortDescription: `Modern, responsive websites built with React and Material UI – including my personal portfolio and a landing page for my business.`,
+    description: `I have developed two modern, responsive websites using React and Material UI: one for showcasing my portfolio, and another for my indie game development brand, Peasant Games. Both sites are built with reusable components, responsive design principles  and tailored layouts for both mobile and desktop devices.`,
     features: [
       
     ],
     links: {
-      itchIoLink: "https://peasant-games.itch.io/code-vanguard",
+      githubLink: "https://github.com/Matzgo/matzgo-portfolio-mui"
     },
     technologiesUsed: ["React", "JavaScript", "CSS", "HTML" ,"VSCode", "Git"],
   },
@@ -124,7 +125,7 @@ export const projectsData = {
   }, */
 
 
-  ARMagnet: {
+  /* ARMagnet: {
     date: "2023",
     id: "ARMagnet",
     bannerImage: "/projects/ReactWebsites/reactWebsites.png",
@@ -140,7 +141,7 @@ export const projectsData = {
     },
     technologiesUsed: ["CSharp", "UnityEngine",  "VisualStudio", "Git"],
   },
-
+ */
  /*  PeerToPeer: {
     date: "2023",
     id: "PeerToPeer",
@@ -159,7 +160,7 @@ export const projectsData = {
   }, */
 
 
-  ARTennis: {
+  /* ARTennis: {
     date: "2023",
     id: "ARTennis",
     bannerImage: "/projects/ReactWebsites/reactWebsites.png",
@@ -174,7 +175,7 @@ export const projectsData = {
       itchIoLink: "https://peasant-games.itch.io/code-vanguard",
     },
     technologiesUsed: ["CSharp", "UnityEngine",  "VisualStudio", "Git"],
-  },
+  }, */
 
   /* Geolocation: {
     date: "2023",
@@ -197,17 +198,21 @@ export const projectsData = {
   OtherGames: {
     date: "2023",
     id: "OtherGames",
-    bannerImage: "/projects/ReactWebsites/reactWebsites.png",
-    previewImage: "/projects/ReactWebsites/reactWebsites.png",
-    title: "Other Games",
-    shortDescription: `CodeVanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,
-    description: `CodeVanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,
+    bannerImage: "/projects/Siegebound/siegeboundSoldier.png",
+    bannerAdjustY: "15%",
+    previewImage: "/projects/Siegebound/siegeboundSoldier.png",
+    title: "Other Games and Projects",
+    shortDescription: `A collection of small prototype games I developed in Unity, along with explorations in Unreal Engine and C++ programming.`,
+
+description: `Since the beginning of my bachelor's degree, I have developed several small prototype games using Unity, gaining a deep familiarity with the engine and its workflow. Additionally, I explored Unreal Engine and C++, as well as other engines and languages through a few small prototype projects to broaden my understanding of game development software and tools.`,
+
+
     features: [
       
     ],
     links: {
       
     },
-    technologiesUsed: ["CSharp", "Cplusplus", "UnityEngine", "UnrealEngine",  "Python"],
+    technologiesUsed: ["CSharp", "Cplusplus", "UnityEngine", "UnrealEngine"],
   },
 };

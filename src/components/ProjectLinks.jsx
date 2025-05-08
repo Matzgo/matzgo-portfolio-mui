@@ -15,7 +15,7 @@ export default function ProjectLinks({
       sx={{
         display: "flex",
         justifyContent: "center",
-        mt: 6,
+        mt: 2,
         pb: githubLink || steamLink || itchIoLink || customImage ? 4 : 0,
       }}
     >
@@ -29,7 +29,7 @@ export default function ProjectLinks({
             alignItems: "center",
             mx: 5,
             "&:hover svg": {
-              color: "brightText.primary", // Change color on hover
+              color: "bright.main", // Change color on hover
             },
           }}
         >
@@ -53,7 +53,7 @@ export default function ProjectLinks({
               transition: "color 0.3s ease, transform 0.3s ease", // Smooth transition for hover effect
             },
             "&:hover .steamIcon": {
-              color: "brightText.primary", // Change color on hover
+              color: "bright.main", // Change color on hover
               transform: "scale(1.05)", // Slightly scale the icon on hover
             },
           }}
@@ -77,7 +77,7 @@ export default function ProjectLinks({
               transition: "color 0.3s ease, transform 0.3s ease", // Smooth transition for hover effect
             },
             "&:hover .itchIoIcon": {
-              color: "brightText.primary", // Change color on hover
+              color: "bright.main", // Change color on hover
               transform: "scale(1.05)", // Slightly scale the icon on hover
             },
           }}

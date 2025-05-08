@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { projectsData } from "../../data/projectsData";
 import ProjectPage from "./ProjectPage";
+import NotFound from "../NotFound";
 
 export default function ProjectPageWrapper() {
   const { id } = useParams(); // Extract the project ID from the URL
@@ -14,7 +15,7 @@ export default function ProjectPageWrapper() {
   }, [id]);
 
   if (!project) {
-    return <div>Project not found</div>; // Handle invalid project IDs
+    return <NotFound />; // Handle invalid project IDs
   }
 
   return <ProjectPage projectData={project} />;
