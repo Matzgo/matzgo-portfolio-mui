@@ -6,6 +6,7 @@ export default function CardFeature({
   imageSrc,
   title,
   text,
+  imageScale = 1,
 }) {
   return (
     <Box

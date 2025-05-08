@@ -2,8 +2,9 @@ import React from "react";
 import { Typography, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { aboutData } from "../data/aboutData";
 
-export default function IntroSection() {
+export default function CardAboutMe({ onClick }) {
   return (
     <Box
       sx={{
@@ -35,7 +36,7 @@ export default function IntroSection() {
             fontWeight: "bold",
           }}
         >
-          Matthias Mitschele
+          {aboutData.name}
         </Typography>
         <Typography
           variant="h6"
@@ -48,22 +49,21 @@ export default function IntroSection() {
             fontSize: "1.2rem", // Adjust the text size here
           }}
         >
-          Master's Graduate in Informatics: Games Engineering
+          {aboutData.workTitle}
         </Typography>
         <Typography
           sx={{
-            ml: { xs: 0, sm: 2 }, // Set ml: 0 on extra-small screens and ml: 2 on small screens and above
+            ml: 0,
             mb: 2,
             textAlign: "left",
           }}
         >
-          Hey this is a short introduction to who i am, these are the projects
-          that i have worked on
+          {aboutData.shortDescription}
         </Typography>
       </Box>
       <Box
         sx={{
-          width: 115,
+          width: 130,
           maxWidth: "50%", // Limit the maximum width of the box
           mx: "auto", // Center the box horizontally
         }}
@@ -76,7 +76,7 @@ export default function IntroSection() {
           }}
         >
           <img
-            src="/about.jpg"
+            src={aboutData.profileImage}
             alt="Description of the image"
             style={{
               maxWidth: "100%", // Ensure the image is responsive
@@ -86,24 +86,30 @@ export default function IntroSection() {
         </Box>
 
         <Button
-          component={Link}
-          to="/aboutme"
+          onClick={onClick}
           sx={{
             width: "100%", // Full width button
             display: "flex", // Use flexbox for alignment
             justifyContent: "flex-end", // Align text and icon to the right
             bgcolor: "primary.main",
+            border: "2px solid", // This uses the darker variant from your theme
+            borderColor: "transparent",
+            transition: "border-color 0s ease", // Smooth transition for border color
             gap: 0,
             textTransform: "none", // <- disables the automatic uppercase
             "&:hover": {
-              bgcolor: "secondary.main", // This uses the darker variant from your theme
+              border: "2px solid", // This uses the darker variant from your theme
+              borderColor: "bright.main",
             },
           }}
         >
-          <Typography color="brightText.primary" sx={{ mr: 0 }}>
+          <Typography
+            color="text.primary"
+            sx={{ mr: 0.65, ml: 0, fontWeight: "bold" }}
+          >
             About Me
           </Typography>
-          <ArrowRightIcon sx={{ fontSize: 25, color: "brightText.primary" }} />
+          <ArrowRightIcon sx={{ fontSize: 25, color: "text.primary" }} />
         </Button>
       </Box>
     </Box>

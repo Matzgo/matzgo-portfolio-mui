@@ -3,6 +3,9 @@ import { createTheme } from "@mui/material/styles";
 
 // A custom theme for this app
 const theme = createTheme({
+  typography: {
+    fontSize: 14, // Default font size
+  },
   palette: {
     background: {
       primary: "#1f1916", // Set your desired background color here
@@ -29,16 +32,12 @@ const theme = createTheme({
     },
 
     text: {
-      primary: "#fff2de",
+      primary: "#eeeeee",
       secondary: "#ffeac9",
+      link: "#f2c274",
+      linkHover: "#ab8952",
       disabled: "#000000", // Custom text.secondary color (red in this case)
-      dark: "#a1988a", // Custom text.secondary color (red in this case)
-    },
-
-    brightText: {
-      primary: "#fff2de", // Custom text.secondary color (red in this case)
-      secondary: "#ccb083", // Custom text.secondary color (red in this case)
-      disabled: "#ffffff", // Custom text.secondary color (red in this case)
+      dark: "#a1a1a1", // Custom text.secondary color (red in this case)
     },
 
     components: {

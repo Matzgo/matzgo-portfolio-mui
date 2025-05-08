@@ -2,8 +2,13 @@ import { Container, Box, Typography, Link } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email"; // Import the Email icon
 import Banner from "../components/Banner";
 import Socials from "../components/Socials";
-
+import { useEffect } from "react";
 export default function Impressum() {
+  // Scroll to the top when the project ID changes
+  // Scroll to the top when the project ID changes
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  });
   return (
     <>
       <Container maxWidth="md" disableGutters>

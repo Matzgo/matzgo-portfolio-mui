@@ -1,31 +1,33 @@
-import * as React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { useRef } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
-import ProTip from "./ProTip"; // Assuming ProTip is another component
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import MUILink from "@mui/material/Link";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
 import Footer from "./components/Footer";
-import Impressum from "./pages/Impressum";
 import BackgroundGame from "./components/BackgroundGame";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import PSiegebound from "./pages/projects/PSiegebound"; // Import your project page
-import PCodeVanguard from "./pages/projects/PCodeVanguard";
+import Home from "./pages/Home";
+import Impressum from "./pages/Impressum";
 import AboutMe from "./pages/AboutMe";
+import ProjectPageWrapper from "./pages/projects/ProjectPageWrapper";
 
 export default function App() {
-  const theme = useTheme(); // Access the Material-UI theme
-  const isBelowMd = useMediaQuery(theme.breakpoints.down("md")); // Check if the screen width is below "md"
+  const theme = useTheme();
+  const isBelowMd = useMediaQuery(theme.breakpoints.down("md"));
+
+  const homeScrollPosition = useRef(0); // Store the scroll position of the home page
 
   return (
     <ThemeProvider theme={theme}>
@@ -35,15 +37,13 @@ export default function App() {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-          position: "relative", // Ensure proper stacking context
+          position: "relative",
           zIndex: 0,
-          backgroundColor: "background.primary", // Apply background color to the full page
+          backgroundColor: "background.primary",
         }}
       >
-        {/* Background Game */}
-        {!isBelowMd && <BackgroundGame />} {/* Only render when below "md" */}
         <Router>
-          {/* AppBar component that is fixed at the top */}
+          {!isBelowMd && <BackgroundGame />}
           <AppBar position="fixed" color="primary">
             <Toolbar
               sx={{
@@ -57,7 +57,7 @@ export default function App() {
                 variant="h6"
                 sx={{
                   fontWeight: "bold",
-                  display: { xs: "none", sm: "block" }, // Hidden on mobile
+                  display: { xs: "none", sm: "block" },
                   flexGrow: 1,
                 }}
               >
@@ -71,35 +71,33 @@ export default function App() {
                   </Typography>
                 </Button>
 
-                <Button color="inherit" component={Link} to="/contact">
+                <Button color="inherit" component={Link} to="/aboutme">
                   <Typography color="brightText.primary" fontWeight="bold">
-                    Contact
+                    About Me
                   </Typography>
                 </Button>
               </Box>
             </Toolbar>
           </AppBar>
 
-          {/* Offset for the fixed AppBar */}
           <Toolbar />
 
-          {/* Main content */}
           <Box sx={{ flex: 1 }}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route
+                path="/"
+                element={<Home homeScrollPosition={homeScrollPosition} />}
+              />
               <Route path="/impressum" element={<Impressum />} />
               <Route path="/aboutme" element={<AboutMe />} />
-              <Route path="/siegebound" element={<PSiegebound />} />
-              <Route path="/codevanguard" element={<PCodeVanguard />} />
+              <Route path="/projects/:id" element={<ProjectPageWrapper />} />
             </Routes>
           </Box>
 
-          {/* Footer content */}
           <Box
             sx={{ py: 3, textAlign: "center", backgroundColor: "footer.main" }}
           >
-            <Footer></Footer>
+            <Footer />
           </Box>
         </Router>
       </Box>

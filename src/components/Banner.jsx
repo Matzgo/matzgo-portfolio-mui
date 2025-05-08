@@ -41,14 +41,17 @@ export default function Banner({ imageSrc, adjustY = "100%", backLink = "/" }) {
             borderRight: "2px solid",
             borderBottom: "2px solid",
             borderTop: "2px solid",
+            borderLeft: "2px solid",
             borderTopRightRadius: "8px",
             borderBottomRightRadius: "8px",
             borderColor: "background.primary",
+            borderLeftColor: "primary.main",
             backgroundColor: "primary.main", // Semi-transparent background
             color: "white",
             textDecoration: "none",
             "&:hover": {
-              backgroundColor: "background.secondary", // Darker on hover
+              borderColor: "background.secondary", // Darker on hover
+              borderColor: "bright.main", // Darker on hover
             },
           }}
         >

@@ -1,29 +1,48 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import Button from "@mui/material/Button";
+import { techData } from "../data/techData"; // Import tech data
 
 export default function CardProject({
   imageSide = "left",
+  previewImageAdjust = "50% 50%",
   imageSrc,
   title,
   date,
   description,
-  toLink,
-  icons = [], // Add an optional icons array prop
+  icons = [],
+  onClick,
 }) {
+  const textSectionRef = useRef(null); // Ref for the text section
+  const [textSectionHeight, setTextSectionHeight] = useState(0); // State to store the height
+
+  const updateTextSectionHeight = () => {
+    if (textSectionRef.current) {
+      setTextSectionHeight(textSectionRef.current.offsetHeight); // Get the height of the text section
+    }
+  };
+
+  useEffect(() => {
+    // Update the height on mount
+    updateTextSectionHeight();
+    // Add event listener for window resize
+    window.addEventListener("resize", updateTextSectionHeight);
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("resize", updateTextSectionHeight);
+    };
+  }, []);
+
   return (
     <Box
-      component={toLink ? Link : "div"} // Conditionally render as Link or div
-      to={toLink || undefined} // Only pass `to` if `toLink` is provided
+      onClick={onClick}
       sx={{
         display: "flex",
+        cursor: "pointer",
         flexDirection: {
-          xs: "column", // Stack image and text vertically on mobile
-          sm: imageSide === "left" ? "row" : "row-reverse", // Horizontal layout for larger screens
+          xs: "column",
+          sm: imageSide === "left" ? "row" : "row-reverse",
         },
-        alignItems: "flex-start",
+        alignItems: "flex-start", // Ensure both sections stretch to the same height
         gap: 2,
         p: 0,
         backgroundColor: "background.secondary",
@@ -32,12 +51,12 @@ export default function CardProject({
         border: "2px solid",
         borderColor: "primary.main",
         mb: 2,
-        textDecoration: "none", // Remove underline from the link
+        textDecoration: "none",
         "&:hover": {
-          backgroundColor: toLink ? "background.hover" : "", // Add hover effect only if it's a link
-          borderColor: toLink ? "bright.main" : "primary.main", // Change border color only if it's a link
+          backgroundColor: "background.hover",
+          borderColor: "bright.main",
           "& .moreAboutProjectText": {
-            color: "bright.main", // Change text color on hover
+            color: "bright.main",
           },
         },
       }}
@@ -47,35 +66,39 @@ export default function CardProject({
         sx={{
           flex: 1,
           textAlign: "center",
-          borderColor: "primary.main",
           overflow: "hidden",
-          maxWidth: "100%",
-          height: "auto",
-          maxHeight: { xs: "400px", sm: "auto" }, // Set a max height for the image
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: `${textSectionHeight}px`, // Set the height dynamically
+          maxHeight: { xs: 200, sm: `${textSectionHeight}px` }, // Set a max height for smaller screens
+          borderRight: imageSide === "left" ? "2px solid" : "none",
+          borderLeft: imageSide === "right" ? "2px solid" : "none",
+          borderColor: "primary.main",
         }}
       >
         <img
           src={imageSrc}
           alt={title}
           style={{
-            maxWidth: "100%",
-            height: "auto",
-            borderRadius: "0px",
+            width: "100%",
+            height: "100%",
             objectFit: "cover",
-            display: "block", // Remove inline spacing
+            objectPosition: `${previewImageAdjust}`,
+            display: "block",
           }}
         />
       </Box>
 
       {/* Text Section */}
       <Box
+        ref={textSectionRef} // Attach the ref to the text section
         sx={{
-          p: 2,
           flex: 2,
-          height: "100%", // Ensure it takes full height
-          display: "flex", // Use flexbox for alignment
-          flexDirection: "column", // Stack text vertically
-          justifyContent: "flex-start", // Align content to the top
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
         }}
       >
         <Typography
@@ -85,7 +108,7 @@ export default function CardProject({
             mb: 0,
             fontWeight: "bold",
             textAlign: "left",
-            color: "text.primary", // Explicitly set the color to override link styles
+            color: "text.primary",
           }}
         >
           {title}
@@ -115,14 +138,15 @@ export default function CardProject({
           sx={{
             display: "flex",
             flexDirection: "row",
-            gap: 2, // Space between icons
+            gap: 2,
             mt: 2,
-            mb: 1, // Margin top for spacing
+            mb: 1,
           }}
         >
-          {icons.map((Icon, index) => (
-            <Icon key={index} size={30} />
-          ))}
+          {icons.map((key, index) => {
+            const tech = techData[key]; // Retrieve the tech data
+            return tech?.Icon ? <tech.Icon key={index} size={30} /> : null; // Render the icon if it exists
+          })}
         </Box>
         <Typography
           className="moreAboutProjectText"

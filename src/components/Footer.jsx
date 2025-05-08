@@ -4,6 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 export default function Footer() {
   return (
     <Box
+      id="footer"
       sx={{
         display: "flex",
         justifyContent: "center", // Centers the links horizontally

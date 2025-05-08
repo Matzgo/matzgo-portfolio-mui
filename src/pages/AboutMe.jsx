@@ -1,72 +1,181 @@
-import * as React from "react";
-import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import ProTip from "../ProTip"; // Adjust the path as needed
-import { Button, Link as MUILink } from "@mui/material";
-import Socials from "../components/Socials";
+import React from "react";
+import { Container, Box, Typography } from "@mui/material";
 import Banner from "../components/Banner";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import CardAboutMe from "../components/CardAboutMe";
-import CardProject from "../components/CardProject";
-import {
-  CsharpOriginal,
-  UnityOriginal,
-  BlenderOriginal,
-  GitPlain,
-  CplusplusOriginal,
-  PythonOriginal,
-  ReactOriginal,
-  VscodeOriginal,
-  VisualstudioOriginal,
-  GoOriginal,
-  DockerOriginal,
-} from "devicons-react";
-
-function IconLink() {
-  return (
-    <Container maxWidth="sm">
-      <Box sx={{ display: "flex", alignItems: "center", my: 4 }}>
-        <HomeIcon sx={{ fontSize: 40, mr: 2 }} />{" "}
-        {/* Adjust fontSize and margin as needed */}
-        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <Typography variant="h6">Home</Typography>
-        </Link>
-      </Box>
-    </Container>
-  );
-}
+import TechnologyItem from "../components/TechnologyItem";
+import { aboutData } from "../data/aboutData";
+import ProjectLinks from "../components/ProjectLinks";
+import Socials from "../components/Socials"; // Import the Socials component
+import { Link } from "@mui/material";
+import { useEffect } from "react";
+import AboutCardStudies from "../components/AboutCardStudies";
+import Button from "@mui/material/Button"; // Import the Button component
 
 export default function AboutMe() {
+  const {
+    bannerImage,
+    bannerAdjustY,
+    name,
+    workTitle,
+    mail,
+    description,
+    degrees,
+    technologiesUsed,
+    cvPath,
+  } = aboutData;
+  // Scroll to the top when the project ID changes
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  });
+
   return (
-    <>
-      <Container maxWidth="md" disableGutters>
-        <Box
+    <Container maxWidth="md" disableGutters>
+      <Box
+        sx={{
+          pt: 0,
+          pb: 3,
+          backgroundColor: "background.secondary",
+        }}
+      >
+        {/* Banner Section */}
+        <Banner imageSrc={bannerImage} adjustY={bannerAdjustY} />
+
+        {/* Title Section */}
+        <Typography
+          variant="h4"
+          component="h1"
           sx={{
-            pt: 0,
-            pb: 3,
-            backgroundColor: "background.secondary",
+            mx: { xs: 2, sm: 4 },
+            mt: 2,
+            textAlign: "left",
+            fontWeight: "bold",
           }}
         >
-          <Typography
-            variant="h4"
-            component="h1"
+          {name}
+        </Typography>
+        <Typography
+          variant="h6"
+          component="h1"
+          sx={{
+            mb: 2,
+            mx: { xs: 2, sm: 4 },
+            textAlign: "left",
+            opacity: 0.6,
+            color: "text.primary",
+            fontSize: "1.2rem", // Adjust the text size here
+          }}
+        >
+          {workTitle}
+        </Typography>
+        {/* Description Section */}
+        <Typography
+          sx={{
+            mt: 2,
+            mb: 3,
+            mx: { xs: 2, sm: 4 },
+            textAlign: "left",
+            fontWeight: "bold",
+          }}
+        >
+          {description}
+        </Typography>
+        {/* Mail and CV Download Section */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row" }, // Column for mobile, row for larger screens
+            justifyContent: "space-between", // Space between Contact Me and the button
+            alignItems: { xs: "flex-start", sm: "center" }, // Align items properly
+            mt: 0,
+            mb: 4,
+            mx: { xs: 2, sm: 4 }, // Add horizontal margin
+            gap: { xs: 2, sm: 0 }, // Add spacing between elements on mobile
+          }}
+        >
+          {/* Contact Me Section */}
+          <Box
             sx={{
-              mb: 2,
-              pt: 4,
-              textAlign: "center",
-              fontWeight: "bold",
+              display: "flex",
+              alignItems: "center",
             }}
           >
-            About Me
-          </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                textAlign: "left",
+                fontWeight: "bold",
+                color: "text.primary",
+              }}
+            >
+              Contact Me:
+            </Typography>
+            <Link
+              href={`mailto:${mail}`}
+              sx={{
+                ml: 2,
+                textDecoration: "none",
+                color: "text.link",
+                fontWeight: "bold",
+                fontSize: "1.2rem",
+                "&:hover": {
+                  color: "text.linkHover",
+                },
+              }}
+            >
+              {mail}
+            </Link>
+          </Box>
 
-          {/* Social Media Links Section */}
-          <Socials />
+          {/* CV Download Section */}
+          <Button
+            variant="contained"
+            color="primary"
+            href={cvPath} // Path to your CV file in the public folder
+            download={`CV_${name}.pdf`} // dynamic file name
+            sx={{
+              textTransform: "none",
+              fontWeight: "bold",
+              fontSize: "1rem",
+              alignSelf: { xs: "center", sm: "flex-end" }, // Align button properly
+            }}
+          >
+            Download My CV
+          </Button>
         </Box>
-      </Container>
-    </>
+
+        {/* Degrees Section */}
+        <AboutCardStudies degrees={degrees} />
+
+        {/* Technologies Section */}
+        <Typography
+          variant="h5"
+          component="h2"
+          sx={{
+            mx: { xs: 2, sm: 4 },
+            textAlign: "center",
+            fontWeight: "bold",
+            mt: 0,
+          }}
+        >
+          Skills:
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: 2,
+            mt: 2,
+            mb: 4,
+            px: 2,
+          }}
+        >
+          {technologiesUsed.map((tech, index) => (
+            <TechnologyItem key={index} tech={tech} />
+          ))}
+        </Box>
+        <Socials></Socials>
+      </Box>
+    </Container>
   );
 }

@@ -50,10 +50,11 @@ export default function ProjectLinks({
               width: "80px",
               height: "80px",
               color: "#806252",
-              transition: "color 0.3s ease", // Smooth transition for hover effect
+              transition: "color 0.3s ease, transform 0.3s ease", // Smooth transition for hover effect
             },
             "&:hover .steamIcon": {
               color: "brightText.primary", // Change color on hover
+              transform: "scale(1.05)", // Slightly scale the icon on hover
             },
           }}
         >
@@ -73,10 +74,11 @@ export default function ProjectLinks({
               width: "80px",
               height: "80px",
               color: "#806252",
-              transition: "color 0.3s ease", // Smooth transition for hover effect
+              transition: "color 0.3s ease, transform 0.3s ease", // Smooth transition for hover effect
             },
             "&:hover .itchIoIcon": {
               color: "brightText.primary", // Change color on hover
+              transform: "scale(1.05)", // Slightly scale the icon on hover
             },
           }}
         >
@@ -96,10 +98,11 @@ export default function ProjectLinks({
             "& img": {
               width: "80px",
               height: "80px",
-              transition: "filter 0.3s ease", // Smooth transition for darkening effect
+              transition: "filter 0.3s ease, transform 0.3s ease", // Smooth transition for hover effect
             },
             "&:hover img": {
-              filter: "brightness(0.7)", // Darken the image on hover
+              filter: "brightness(1.3)", // Darken the image on hover
+              transform: "scale(1.05)", // Slightly scale the image on hover
             },
           }}
         >

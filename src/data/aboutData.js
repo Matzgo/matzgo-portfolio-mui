@@ -1,0 +1,35 @@
+export const aboutData = {
+  bannerImage: "/about/LogoBanner.png",
+  profileImage: "/about/about.jpg",
+  bannerAdjustY: "50%", 
+  name: "Matthias Mitschele",
+  workTitle: "Master's Graduate in Informatics: Games Engineering",
+  shortDescription: "Welcome! I'm Matthias \"Matzgo\" Mitschele and I'm a Master's graduate in Informatics: Games Engineering. I have a passion for game development and programming, and I'm excited to share my projects and experiences with you",
+  description: `I am Matthias Mitschele, a Master's graduate in Informatics: Games Engineering. I specialize in game development, software engineering, and deep learning.`,
+  mail:"contact@matzgo.com",
+  cvPath: "/about/cv.pdf",
+  degrees: [
+    {
+      title: "Master's Degree in Informatics: Games Engineering",
+      institution: "Technical University of Munich",
+      year: "2025",
+      image: "/about/tumLogo.png",
+    },
+    {
+      title: "Bachelor's Degree in Informatics: Games Engineering",
+      institution: "Technical University of Munich",
+      year: "2021",
+      image: "/about/tumLogo.png",
+    },
+  ],
+  technologiesUsed: [
+    "CSharp",
+    "UnityEngine",
+    "Blender",
+    "Python",
+    "React",
+    "Git",
+    "VSCode",
+    "VisualStudio",
+  ],
+};
