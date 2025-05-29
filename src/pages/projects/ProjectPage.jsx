@@ -50,7 +50,7 @@ export default function ProjectPage({ projectData }) {
             mb: 4,
             mx: { xs: 2, sm: 4 },
             textAlign: "left",
-            fontWeight: "bold",
+            fontWeight: "none",
           }}
         >
           {description}

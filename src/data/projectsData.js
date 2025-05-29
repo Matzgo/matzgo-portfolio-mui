@@ -6,7 +6,7 @@ export const projectsData = {
     previewImage: "/projects/Siegebound/siegebound.png",
     title: "Siegebound",
     shortDescription: `Siegebound is a solo-developed roguelike strategy game built in Unity 6, combining mechanics from tower defense, real-time strategy, and roguelike games.`,
-    description: `Siegebound is a solo-developed roguelike strategy game built in Unity 6, combining mechanics from tower defense, real-time strategy, and roguelike games. I have been working this game for the last 2 years, and it is my main project. I am working on all aspects of the game, including design, programming, art, and sound and music.  I am also working on the marketing and business side of the game, including the website and social media presence. I am also using Blender for 3D modeling and animation and Substance Painter for texturing.`,
+    description: `SiegeBound is a solo-developed roguelike strategy game built in Unity 6 that blends mechanics from tower defense, real-time strategy, and roguelike genres. I've been developing the game for over two years, handling all aspects of production—from game design and programming to 3D modeling, animation, sound design, and music composition. In addition to development, I manage the marketing and business side of the project, including building the website and maintaining a social media presence. The game's assets are created using Blender for modeling and animation, and Substance Painter for high-quality texturing.`,
     features: [
       {
         imageSrc: "/projects/Siegebound/siegebound.png",
@@ -18,21 +18,27 @@ export const projectsData = {
         title: "Editor Tools",
         text: "Several Editor Tools have been developed, including a 3D Tilemap Editor as well as custom Inspectors and Attribute Drawers.",
       }, 
+   
       {
-        imageSrc: "/projects/Siegebound/siegebound.png",
+        imageSrc: "/projects/Siegebound/siegeboundStats.png",
+        title: "Stat and Ability System",
+        text: "Implementation of a Stat and Ability System that allows for each Stat to be upgraded and modified through randomly drawn cards.",
+      },
+         {
+        imageSrc: "/projects/Siegebound/siegeboundCombat1.gif",
         title: "Behavior Trees and Pathfinding",
         text: "Siegebound utilizes Behavior Trees and A* Pathfinding to create intelligent and responsive AI for enemies and allies",
       },
       {
-        imageSrc: "/projects/Siegebound/UnitStats.png",
-        title: "Stat and Ability System",
-        text: "Implementation of a Stat and Ability System that allows for each Stat to be upgraded and modified through randomly drawn cards.",
-      },
-      
-      {
-        imageSrc: "/projects/Siegebound/Trait.png",
+        imageSrc: "/projects/Siegebound/siegeboundSO.png",
         title: "Scriptable Objects",
         text: "The game makes extensive use of Scriptable Objects to define and manage game data, including units, abilities, and traits.",
+      },
+
+       {
+        imageSrc: "/projects/Siegebound/siegeboundFmod.png",
+        title: "FMOD Integration",
+        text: "Uses FMOD for audio management, allowing for dynamic sound effects and music that adapt to the gameplay.",
       },
     ],
 
@@ -50,8 +56,8 @@ export const projectsData = {
   CodeVanguard: {
     date: "2024 - April 2025",
     id: "CodeVanguard",
-    bannerImage: "/projects/CodeVanguard/CodeVanguardLineByLine.png",
-    bannerAdjustY: "100%",
+    bannerImage: "/projects/CodeVanguard/CodingInterface.png",
+    bannerAdjustY: "50%",
     previewImage: "/projects/CodeVanguard/CodingInterface.png",
     title: "Master's Thesis - CodeVanguard",
     shortDescription: `CodeVanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,

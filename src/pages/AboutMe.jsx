@@ -73,7 +73,7 @@ export default function AboutMe() {
             mb: 3,
             mx: { xs: 2, sm: 4 },
             textAlign: "left",
-            fontWeight: "bold",
+            fontWeight: "none",
           }}
         >
           {description}
@@ -130,7 +130,6 @@ export default function AboutMe() {
             variant="contained"
             color="primary"
             href={cvPath} // Path to your CV file in the public folder
-            download={`CV_${name}.pdf`} // dynamic file name
             sx={{
               textTransform: "none",
               fontWeight: "bold",
