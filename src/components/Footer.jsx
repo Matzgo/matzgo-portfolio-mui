@@ -31,7 +31,7 @@ export default function Footer() {
       </Link>
       <Link
         component={RouterLink}
-        to="/contact"
+        to="/aboutme"
         sx={{
           color: "text.primary",
           textDecoration: "none",

@@ -1,12 +1,12 @@
 export const projectsData = {
   // Siegebound Project
   Siegebound: {
-    date: "2023 - present",
+    date: "2023 - Present",
     bannerImage: "/projects/Siegebound/siegeboundBanner.png",
     previewImage: "/projects/Siegebound/siegebound.png",
     title: "Siegebound",
     shortDescription: `Siegebound is a solo-developed roguelike strategy game built in Unity 6, combining mechanics from tower defense, real-time strategy, and roguelike games.`,
-    description: `SiegeBound is a solo-developed roguelike strategy game built in Unity 6 that blends mechanics from tower defense, real-time strategy, and roguelike genres. I've been developing the game for over two years, handling all aspects of production—from game design and programming to 3D modeling, animation, sound design, and music composition. In addition to development, I manage the marketing and business side of the project, including building the website and maintaining a social media presence. The game's assets are created using Blender for modeling and animation, and Substance Painter for high-quality texturing.`,
+    description: `SiegeBound is a solo-developed roguelike strategy game built in Unity 6 that blends mechanics from tower defense, real-time strategy, and roguelike genres. I've been developing the game for over two years, handling all aspects of production—from game design and programming to 3D modeling, animation, sound design, and music composition. In addition to development, I manage other parts of the project, including developing the website and maintaining a social media presence. The game's assets are created using Blender for modeling and animation, and Substance Painter for high-quality texturing.`,
     features: [
       {
         imageSrc: "/projects/Siegebound/siegebound.png",
@@ -59,8 +59,8 @@ export const projectsData = {
     bannerImage: "/projects/CodeVanguard/CodingInterface.png",
     bannerAdjustY: "50%",
     previewImage: "/projects/CodeVanguard/CodingInterface.png",
-    title: "Master's Thesis - CodeVanguard",
-    shortDescription: `CodeVanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,
+    title: "Master's Thesis - Code Vanguard",
+    shortDescription: `Code Vanguard is a project that integrates Roslyn C# runtime compilation, an in-game code editor, and feedback generation using syntax trees.`,
     description: `As the demand for skilled software developers continues to rise, innovative approaches to programming education have become increasingly important. This page presents the serious game Code Vanguard, which is designed to teach the C# programming language in a unique immersive and interactive manner. The game integrates a programming environment that supports editing of real C# code to create a learning experience that closely mirrors real-world programming scenarios. Players are tasked to write code that solves programming challenges presented in the 3D game world through an in-game coding interface. Code Vanguard aims to help engage both beginner and intermediate programmers in a learning experience that involves higher-order cognitive processes described in Bloom’s taxonomy. It features a runtime C# compilation system, line-by-line execution of user written code as well as a feedback system that evaluates code based on several code quality metrics. A user study was conducted to evaluate the game's effectiveness in conveying the covered programming topics of the serious game and the effectiveness of the integrated educational tools.`,
     features: [
       {
@@ -204,9 +204,9 @@ export const projectsData = {
   OtherGames: {
     date: "2023",
     id: "OtherGames",
-    bannerImage: "/projects/Siegebound/siegeboundSoldier.png",
+    bannerImage: "/projects/OtherGames/test2.PNG",
     bannerAdjustY: "15%",
-    previewImage: "/projects/Siegebound/siegeboundSoldier.png",
+    previewImage: "/projects/OtherGames/test2.PNG",
     title: "Other Games and Projects",
     shortDescription: `A collection of small prototype games I developed in Unity, along with explorations in Unreal Engine and C++ programming.`,
 
@@ -214,11 +214,61 @@ description: `Since the beginning of my bachelor's degree, I have developed seve
 
 
     features: [
-      
+      {
+        imageSrc: "/projects/OtherGames/test2.PNG",
+        title: "Half Pipe Shooter",
+        text: "A dynamic 3D shooter set inside a half pipe, where players must quickly dodge incoming obstacles while taking precise shots to survive and score high.",
+      },
+
+      {
+        imageSrc: "/projects/OtherGames/BountySlinger2.jpg",
+        title: "Bounty Slinger",
+        text: "A fast-paced Android game that tests your reflexes in a thrilling classic Western duel. Sharpen your reaction time and draw faster than your opponent to become the ultimate gunslinger!",
+      },
     ],
     links: {
       
     },
     technologiesUsed: ["CSharp", "Cplusplus", "UnityEngine", "UnrealEngine"],
+  },
+
+    Art: {
+    date: "2016 - Present",
+    id: "3DModelingAndTexturing",
+    bannerImage: "/projects/ModelingAndTexturing/logs.png",
+    bannerAdjustY: "50%",
+    previewImage: "/projects/ModelingAndTexturing/logs.png",
+    title: "3D Modeling and Texturing",
+    shortDescription: `Modeling and Texturing 3D assets for games and other projects.`,
+
+description: `I have been working with blender for several years, creating 3D models and textures for various projects. My work mostly focused on asset creation for games. I also have experience with Substance Painter for texturing and material creation, allowing me to produce high-quality assets that enhance the visual quality of my projects.`,
+
+
+    features: [
+       {
+        imageSrc: "/projects/ModelingAndTexturing/logs.png",
+        title: "Logs Game Asset",
+        text: "",
+      },
+      {
+        imageSrc: "/projects/ModelingAndTexturing/treeStumps.png",
+        title: "Tree Stump Game Asset",
+        text: "",
+      },
+      {
+        imageSrc: "/projects/ModelingAndTexturing/gloves.jpg",
+        title: "Gloves Game Asset",
+        text: "",
+      },
+      {
+        imageSrc: "/projects/ModelingAndTexturing/kunaisBG.png",
+        title: "Kunai Game Asset",
+        text: "",
+      },
+    ],
+    links: {
+      
+    },
+    technologiesUsed: ["Blender"],
   },
 };

@@ -4,11 +4,11 @@ export const aboutData = {
   bannerAdjustY: "50%", 
   name: "Matthias Mitschele",
   workTitle: "Master's Graduate in Informatics: Games Engineering",
-  shortDescription: "I'm Matthias Mitschele also known as \"Matzgo\" and I'm a Master's graduate in Informatics: Games Engineering. I have a passion for game development and programming, and I'm excited to share my projects and experiences with you.",
-  description: `I'm Matthias Mitschele, also known as "Matzgo", 26 years old, and a Master's graduate in Informatics: Games Engineering. I've always been passionate about creating games, and from an early age, I knew I wanted to turn that passion into a career. I'm still actively following that dream. I'm the owner of a sole proprietorship called Peasant Games, with its main focus on developing and releasing my indie game, Siegebound. I'm currently seeking a position in the Games Industry to continue growing as a game developer and contribute to exciting new projects.`,
-  mail:"contact@matzgo.com",
+  shortDescription: "I'm Matthias Mitschele also known as \"Matzgo\" and I'm a Master's graduate in Informatics: Games Engineering. I have a passion for game development and programming, and I'm excited to share my projects with you.",
+  description: `I'm Matthias Mitschele, also known as "Matzgo", 27 years old, and a Master's graduate in Informatics: Games Engineering. I've always been passionate about creating games, and from an early age, I knew I wanted to turn that passion into a career. I'm still actively following that dream and hoping to get started in the Games Industry!`,
+  mail:"mmitschele@matzgo.com",
   cvPath: "/about/cv.pdf",
-  degrees: [
+  degrees: [ 
     {
       title: "Master's Degree in Informatics: Games Engineering",
       institution: "Technical University of Munich",
